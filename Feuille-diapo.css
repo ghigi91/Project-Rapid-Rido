@@ -1,0 +1,279 @@
+@charset "ISO-8859-15";
+/* CSS Document */
+/* Phones */
+/*@media only screen and (max-width: 768px) {
+
+}
+
+}Fin body*/	
+/*Fin media queries phones*/
+/* Phones and Pad avec 2x or 4x */
+/*@media only screen and (min-width: 768px) and (orientation: portrait){
+}
+Version ordi*/
+/*@media only screen and (min-width: 1024) {
+
+}*/
+@font-face {
+  font-family: 'Sawasdee', 'Sawasdee-Bold', 'Sawasdee-BoldOblique', 'SawasdeeOblique';
+  src: url('../styles/webfonts/Sawasdee.ttf') format('truetype'), url('../styles/webfonts/Sawasdee-Bold.ttf') format('truetype'), url('../styles/webfonts/Sawasdee-BoldOblique.ttf') format('truetype'), url('../styles/webfonts/Sawasdee-Oblique.ttf') format('truetype');
+}
+/*--------------------------*/
+  	
+body {
+  max-width: 100vw;
+  /*display: none;*/
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+	font-family: 'Sawasdee', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.titre {
+  padding: 3vw;
+  text-align: left;
+}
+
+.txtGrosGrasfff {
+  font-size: 2.25vw;
+  font-weight: bold;
+  color: #fff;
+  text-align: justify;
+}
+
+.txtNormalfff {
+  font-size: 1.75vw;
+  font-weight: normal;
+  color: #fff;
+  text-align: justify;
+}	
+	
+.txtGrasfff {
+  font-size: 1.75vw;
+  font-weight: bold;
+  color: #fff;
+  text-align: justify;
+}
+	
+.txtGrosGras666 {
+  font-size: 2.25vw;
+  font-weight: bold;
+  color: #666;
+  text-align: justify;
+}
+
+.txtNormal666 {
+  font-size: 1.75vw;
+  font-weight: normal;
+  color: #666;
+  text-align: justify;
+}	
+	
+.txtGras666 {
+  font-size: 1.75vw;
+  font-weight: bold;
+  color: #666;
+  text-align: justify;
+}
+
+h1 {
+	font-size: 3vw;
+}
+
+h2 {
+	font-size: 2.25vw;
+}
+
+h3 {
+	font-size: 1.75vw;
+}
+
+h4 {
+	font-size: 1.5vw;
+}
+
+h5 {
+	font-size: 1.25vw;
+}
+
+h6 {
+	font-size: 1vw;
+}
+
+.pageContainer {
+  width: 100vw;
+    /*display: none;*/
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+	/*min-width: 300px;
+	max-width: 1920px;*/
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+/* Boutons ------------------*/
+a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.75vw;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #ff6600;
+}
+
+a:focus {
+	color: #ff6600;
+}
+		
+a:active {
+	color: #ff6600;
+} 
+
+img {
+	vertical-align: middle;
+}
+		
+#actif {
+	color: #00CCFF;
+}
+
+/* Boutons ---------------------------------------------------------------------*/
+
+.boutonW {
+	min-width: 30vw;
+	padding: 3vw;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 1vw 1vw 1vw 1vw;
+}
+
+.boutonW:hover {
+	background-color: rgba(0,0,0,0.5);
+	transition: background-color 1s ease;
+	color: #fff;
+}
+
+.boutonR04 {
+	min-width: 30vw;
+	padding: 3vw;
+	background-color: rgba(1,0,30,0.7);
+	border-radius: 1vw 1vw 1vw 1vw;
+}
+
+.boutonR04:hover {
+	background-color: rgba(0,0,0,0.5);
+	transition: background-color 1s ease;
+  color: #fff;
+}
+
+.boxPadCenter {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Diaporama ---------------------------------------------------------------------*/
+.jDiaporama {
+  position: relative;
+  margin: 0;
+  transition: height 2s ease;
+  max-width: 100vw;
+}
+
+.diapoList {
+	margin: 0;
+	padding: 0;
+	list-style-type: none inside none;
+}
+
+.unDiapo {
+  display: block;
+  position: absolute;
+  top: 0;
+  padding: 0;
+}
+
+.diapElem {
+  width: 100vw;
+  max-width: 100vw;
+  transition: opacity 2s ease;
+  height: auto;
+}
+
+.desc {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+	/*background: url('../images/back_desc.png') repeat;*/
+}
+
+.title {
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	text-align: center;
+}
+
+.diapoboutonline {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 60%;
+}
+
+.catchphrase {
+  position: absolute;
+	text-align: center;
+	bottom: 10%;
+	padding: 3%;
+	/*background: url('../images/back_desc.png') repeat*/;
+}
+
+.countContainer {
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+  bottom: 3%;
+}
+
+.count {
+  display: inline-block;
+  width: 37px;
+  height: 36px;
+  background: url('../images/estrella.png') no-repeat left;
+}
+
+.controlContainer {
+  position: absolute;
+  top: 40%;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.prev {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url('../images/prev.png') no-repeat top;
+}
+
+.next {
+  float: right;
+  width: 50px;
+  height: 50px;
+  background: url('../images/next.png') no-repeat top;
+}
+
+.prev:hover {
+  background-position: bottom;
+}
+
+.next:hover {
+  background-position: bottom;
+}

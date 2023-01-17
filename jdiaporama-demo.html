@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15" />
+	<title>Demo du script de cr&eacute;ation de diapositives d&eacute;filants par fondu</title>
+	<link rel="stylesheet" href="feuille-diapo.css" />
+	<script type="text/javascript" src="../Scripts/Javascript/jquery-1.3.2.min.js" async="async"></script>
+</head>
+<body>
+<!--------------------------------Navigation--------------------------------------->
+<div id="bwc2R" class="pageContainer"> 
+  <!--------------------------------Diaporama--------------------------------------->
+  <div class="jDiaporama">
+  		<ul id="diaporama1" class="diapoList">
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="./diaporama-demo-img/slide1.png" />
+  			    <img width="100%" height="auto" src="./diaporama-demo-img/slideA.png" alt="VENTE &Agrave; DISTANCE (VAD) &amp; E-COMMERCE" title="Strat&eacute;gie Out-Sourcing  &amp; Vente &agrave; distance" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#cadre-offres-vad" onclick="allerA('cadre-offres-vad')"><span class="boutonW"><span class="txtGrasfff">En savoir plus...</span></span></a>
+  				  <a href="#contact" onclick="allerA('contact')"><span class="boutonR04"><span class="txtGrasfff">Prendre rendez-vous avec un conseiller</span></span></a>
+  			   </div>
+  			   <div class="catchphrase"><span class="txtGrosGrasfff">Sp&eacute;cialiste des synergies, &eacute;conomies d&apos;&eacute;chelle, et effets de levier, nous vous assistons en operations outsourcing et vente &agrave distance.</span>
+  			   </div>
+  			</div></li>
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="./diaporama-demo-img/slide2.png" />
+  			    <img width="100%" height="auto" src="./diaporama-demo-img/slideB.png" alt="SITES - CR&Eacute;ATIONS WEB - SOLUTIONS DU DIGITAL ET DU NUM&Eacute;RIQUE" title="Cr&eacute;ation Web &amp; Graphisme" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#cadre-offres-web" onclick="allerA('cadre-offres-web')"><span class="boutonW">En savoir plus...</span></a>
+  				  <a href="#cadre-offres-web" onclick="allerA('cadre-offres-web')"><span class="boutonR04">Voir nos offres</span></a>
+  			   </div> 
+  			   <div class="catchphrase"><span class="txtGrosGrasfff">Confiez-nous la cr&eacute;ation de votre site internet et autres supports publicitaires.</span>
+  			   </div>
+        </div></li>
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="./diaporama-demo-img/slide3.png" />
+  			    <img width="100%" height="auto" src="./diaporama-demo-img/slideC.png" alt="TALENT RESEARCH - PROGRAMMES INNOVANTS - BELOME.NET" title="Appels &agrave; projets" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#contact" onclick="allerA('contact')"><span class="boutonW">Nous rejoindre</span></a>
+  				  <a href="#actualites" onclick="allerA('actualites')"><span class="boutonR04">Consulter nos appels &agrave; projets</span></a>
+  			  </div>  
+  			  <div class="catchphrase"><span class="txtGrosGrasfff">Vous souhaitez vous joindre &agrave; notre r&eacute;seau et contribuer &agrave; la conception et &agrave; la r&eacute;alisation de projets inventifs et novateurs. Rejoignez-nous !</span>
+  			  </div>   
+        </div></li>
+  		</ul>
+  </div>
+</div><!--End of page Container-->
+<script type="text/javascript" src="../Scripts/Javascript/jDiaporama.js" defer="defer"></script>
+<script type="text/javascript" defer="defer">
+var i = 0;
+mydiaporama = undefined;
+readyVar = undefined;
+myIntrvl = undefined;
+  function startDiapo() {
+    mydiaporama = new jDiaporama('diaporama1');
+    if(null !== mydiaporama  && typeof mydiaporama !== 'undefined') {
+      mydiaporama.init();
+      mydiaporama.diapoResize('diaporama1');
+      mydiaporama.fplay();
+      readyVar = 1;
+    }
+    else {
+      readyVar = 0;
+    }
+  }
+  
+  function wipeStIntrvl() {
+    clearInterval(myIntrvl);
+  }
+
+  function isDiapoSet() {
+    if(readyVar && typeof readyVar !== 'undefined') {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  
+  function launch() {
+    f5 = isDiapoSet;
+    if(document.readyState == "complete") {
+      wipeStIntrvl();
+      startDiapo();
+      //MIT License terms to observe. 
+      //$('body').fadeIn(3000);
+      //$('.pageContainer').fadeIn(3000, f5);
+    }
+  }
+  
+  window.onpageshow = function() {
+  	var myAnchor = "undefined";
+  	var f6 = launch;
+    myIntrvl = setInterval(f6, 1000);
+  }
+</script>
+</body>
+</html>
