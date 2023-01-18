@@ -7,10 +7,10 @@ Original author: Themefarmer
 Author's website: https://themefarmer.com/
 E-mail: support@themefarmer.com
 
-Contents - List of files: 
-- slide1.png
-- slide2.png
-- slide3.png
-- slideA.png
-- slideB.png
-- slideC.png
+Contents - List of files (6/6): 
+1- slide1.png: laptop in a réunion room - 16/9 ratio
+2- slide2.png: webmaster's desk materials (laptop, camera) - 16/9 ratio
+3- slide3.png: office room - 16/9 ratio
+4- slideA.png : laptop in a réunion room - 5/4 ratio
+5- slideB.png: webmaster's desk materials (laptop, camera) - 5/4 ratio
+6- slideC.png: office room - 5/4 ratio
