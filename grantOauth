@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15" />
+	<title>P2R Introduction Page</title>
+</head>
+<body>
+<!--------------------------------Navigation--------------------------------------->
+<div id="bwc2R" class="pageContainer">
+  <div>
+    <span>Sign in Project Rapid Rido...</span>
+    <form>
+    </form>
+  </div>
+  
+  <!--<script>
+    alert("bla " + encodeURI("https://github.com/ghigi91/Project-Rapid-Rido/blob/0ff44c51d3c2edb56966d750fe8c81d2836797ca/listing.html"));
+  </script>-->
+</div>
+</body>
+</html>
