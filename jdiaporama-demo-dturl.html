@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15" />
+	<title>Demo du script de cr&eacute;ation de diapositives d&eacute;filants par fondu</title>
+	<link type="application/vnd.github.raw" rel="stylesheet" href="https://api.github.com/repos/ghigi91/Project-Rapid-Rido/contents/style-diapo-demo.css" />
+	<script type="application/vnd.github.raw" src="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-html-page/jDiaporama.js"></script>
+</head>
+<body>
+<!--------------------------------Navigation--------------------------------------->
+  <div id="bwc2R" class="pageContainer"> 
+  <!--------------------------------Diaporama--------------------------------------->
+    <div class="jDiaporama">
+  		<ul id="diaporama1" class="diapoList">
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slide1.png" />
+  			    <img width="100%" height="auto" src="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slideA.png" alt="UN DIAPORAMA HTML-CSS-JS FACILE D&apos;UTILISATION" title="D&eacute;filement avec les boutons de contr&ocirc;le &apos;pr&eacute;c&eacute;dent&apos; et &apos;suivant&apos;" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#cadre-offres-vad" onclick="allerA('cadre-offres-vad')"><span class="boutonW"><span class="txtGrasfff">En savoir plus...</span></span></a>
+  				  <a href="#contact" onclick="allerA('contact')"><span class="boutonR04"><span class="txtGrasfff">Prendre rendez-vous avec un conseiller</span></span></a>
+  			   </div>
+  			   <div class="catchphrase"><span class="txtGrosGrasfff">Deux boutons permettant de naviguer vers des pages internes sont cr&eacute;&eacute;s dynamiquement. Les libell&eacute;s peuvent &ecirc;tre red&eacute;finis dans la page.</span>
+  			   </div>
+  			</div></li>
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slide2.png" />
+  			    <img width="100%" height="auto" src="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slideB.png" alt="UN BEAU DIAPORAMA POUR DE BELLES PHOTOS PANORAMIQUES" title="Mettez en valeur avec des photos professionnelles" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#cadre-offres-web" onclick="allerA('cadre-offres-web')"><span class="boutonW">En savoir plus...</span></a>
+  				  <a href="#cadre-offres-web" onclick="allerA('cadre-offres-web')"><span class="boutonR04">Voir nos offres</span></a>
+  			   </div> 
+  			   <div class="catchphrase"><span class="txtGrosGrasfff">Pour une belle page web, nous vous recommandons de faire appel &agrave; un photographe pour vos diapositives.</span>
+  			   </div>
+        </div></li>
+  			<li class="unDiapo"><div class="diapElem">
+  			  <picture>
+  			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slide3.png" />
+  			    <img width="100%" height="auto" src="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/diaporama-demo-img/slideC.png" alt="DIAPOSITIVES AU FORMAT 16/9 ET 5/4 POUR MOBILES" title="Fonctionnalit&eacute; HTML5 &lt;PICTURE&gt;" />
+  			  </picture>
+          <div class="diapoboutonline">
+  				  <a href="#contact" onclick="allerA('contact')"><span class="boutonW">Nous rejoindre</span></a>
+  				  <a href="#actualites" onclick="allerA('actualites')"><span class="boutonR04">Consulter nos appels &agrave; projets</span></a>
+  			  </div>  
+  			  <div class="catchphrase"><span class="txtGrosGrasfff">Vos diapositives sont automatiquement s&eacute;lectionn&eacute;es au format privil&eacute;gi&eacute; de votre navigateur en fonction des r&eacute;solutions et densit&eacute; de pixels rencontr&eacute;s.</span>
+  			  </div>   
+        </div></li>
+  		</ul>
+    </div>
+  </div><!--End of page Container-->
+  <script type="text/javascript" defer="defer">
+    var i = 0;
+    mydiaporama = undefined;
+    readyVar = undefined;
+    myIntrvl = undefined;
+    function startDiapo() {
+      mydiaporama = new jDiaporama('diaporama1');
+      if(null !== mydiaporama  && typeof mydiaporama !== 'undefined') {
+        mydiaporama.init();
+        mydiaporama.diapoResize('diaporama1');
+        mydiaporama.fplay();
+        readyVar = 1;
+      }
+      else {
+        readyVar = 0;
+      }
+    }
+    
+    function wipeStIntrvl() {
+      clearInterval(myIntrvl);
+    }
+  
+    function launch() {
+      //f5 = isDiapoSet;
+      if(document.readyState == "complete") {
+        wipeStIntrvl();
+        startDiapo();
+      }
+    }
+    
+    window.onpageshow = function() {
+    	var myAnchor = "undefined";
+    	var f6 = launch;
+      myIntrvl = setInterval(f6, 1000);
+    }
+  </script>
+</body>
+</html>
