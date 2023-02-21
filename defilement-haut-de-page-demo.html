@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15" />
+	<title>Demo Js d&apos;un defilement haut de page d&apos;une page web en html-css-js</title>
+	<link rel="stylesheet" href="./defilement-haut-de-page-demo.css" />
+</head>
+<body>
+<!--------------------------------Navigation--------------------------------------->
+<div id="bwc2R" class="pageContainer"> 
+  <div class="nav1">
+    <div class="nav-before">
+      <div class="header-layout">
+      	<ul>
+      		<li class="header-menu" id="logo"><a href="#" title="Logo Exemple.fr"><img src="./defilement-haut-de-page-demo-img/logo.png" width="50%" /></a></li>
+      		<li class="header-menu" id="b-home"><a href="#" title="Menu" target="_self"><img src="./defilement-haut-de-page-demo-img/b-menu.png" width="50%" /></a></li>
+      	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="nav2">
+    <div class="nav-after" id="navigation">
+    	<ul id="menu">
+    		<li class="list-menu"><a href="#" title="Premi&egrave;re Rubrique" id="actif" target="_self"><div class="list-m-itm"><span><img id="icoHome" src="./defilement-haut-de-page-demo-img/home.png" alt="MENU" /></span></div></a></li>
+    		<li class="list-menu"><a href="#menu1" title="Deuxi&egrave;me Rubrique" id="nav-solutions" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 1 - Basic Static HTML</span></div></a></li>
+    		<li class="list-menu"><a href="#menu2" title="Troisi&egrave;me Rubrique" id="nav-offres" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 2 - Premium Dynamic HTML</span></div></a></li>
+    		<li class="list-menu"><a href="#menu3" title="Troisi&egrave;me Rubrique" id="nav-actualites" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 3 - Advanced R.Design</span></div></a></li>
+    		<li class="list-menu"><a href="#menu4" title="Quatri&egrave;me Rubrique" id="nav-contact" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 4 - User Experience</span></div></a></li>
+    	</ul>
+    </div>
+  </div>
+  <!----Banniere coordonn&eacute;es-------->
+  <div class="banniere">
+  	<div id="banniere-accroche">
+  	  <span class="txtGrasfff">UN MENU D&Eacute;ROULANT D&Eacute;BUTANT</span>
+  	</div>
+  	<div id="banniere-coordonnees">
+  		<ul class="nav-coord">
+  		  <li class="listCoord"><span><a href="#" title="Infos de contact"><img src="./defilement-haut-de-page-demo-img/ico-arobase.png" alt="Contact" /></a></span></li>
+  		  <li class="listCoord"><span class="txtGrasfff"><a href="#" title="E-mail" target="_self">email@menuderoulant.fr</a></span></li>
+  	  </ul>
+    </div>
+  	<div id="middle-deco">&nbsp;</div>
+  </div>
+  <div id="menu1" style="background: #03004d; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Basic Pixels</span>
+  </div>
+  <div id="menu2" style="background: #ff6600; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Rapid Rido</span>
+  </div>
+  <div id="menu3" style="background: #00ccff; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Advanced CoreDuo</span>
+  </div>
+  <div id="menu4" style="background: #ccc; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Belome web Creative</span>
+  </div>
+  <!------------Bas de page----------------->
+  <div id="scrollButton" class="scrollToTopBox">
+	  <div class="scrollToTopBtn">
+	    <a class="scrollLink">Haut de page</a>
+	  </div>
+	</div>
+</div><!--End of page Container-->
+<script type="text/javascript" defer="defer">
+  var i = 0;
+  readyVar = undefined;
+  myIntrvl = undefined;
+  navTiming = undefined;
+  navBeforeHeight = [];
+  scrollTop = document.getElementById("scrollButton");
+  
+  function getEaseOutExpo(distance, duree, longeur) {
+		var tempo;
+		var x;
+		var myVitc = 0;
+		var progress = 0;
+		var absProgress = new Array(longeur);
+		var interpolation = new Array(longeur);
+		var endof = Math.abs(distance);
+		
+		tempo = Math.floor(duree/longeur);
+		x= 1/longeur;
+		for(i=0; i<longeur-1; i++) {
+			if(i===1) {
+				absProgress[i] = 1;
+			}
+			else {
+				absProgress[i] = 1-Math.pow(2, (10*x*(i+1)-10));
+			}
+      progress += absProgress[i];
+		}
+		
+		if(distance < 0) {
+		  myVitc = (-1)*Math.floor(Math.abs(distance/progress));
+		}
+		else {
+		  myVitc = Math.floor(distance/progress);
+		}
+		for(i=0; i<longeur-1; i++)
+		{
+			interpolation[i] = Math.floor(myVitc*absProgress[i]);
+			endof -= Math.abs(interpolation[i]);
+		}
+		if(distance < 0) {
+		  endof *= -1;
+		}
+		interpolation[longeur-1] = endof;
+  	return interpolation;	
+  }
+  
+  function allerA(element){
+		var animFrames;
+    var cpt = 0;
+    var posY = 0;
+    var tabV = [];  
+    var myElement = document.getElementById(element);
+    if(myElement !== null && myElement != "") {
+	    posY = myElement.offsetTop - window.pageYOffset;
+      tabV = getEaseOutExpo(posY, 1000, 50);
+      animFrames = setInterval(function() {
+        window.scrollBy(0, tabV[cpt]);
+        cpt+=1; 
+        if(cpt >= tabV.length) {
+          clearInterval(animFrames);
+        }
+      },20);
+    }	
+	}
+  
+  function slideDown(element) {
+    var long =  0;
+    if(null !== navTiming && typeof navTiming !== 'undefined') {
+      clearTimeout(navTiming);
+    }
+    var theElem = document.getElementById(element);
+    theElem.style.transition = "height 2s ease";
+    if(null !== navBeforeHeight.length && typeof navBeforeHeight.length !== 'undefined') {
+      long = navBeforeHeight.length;
+    }
+    if(long > 0) {
+      i = 0;
+      while(i < long) {
+        if(navBeforeHeight[i][0] == element) {
+    		  theElem.style.height = navBeforeHeight[i][1]+"px";
+        }
+        i += 1;
+      }
+    }
+  }
+  
+  function slideUp(element) {
+  	var trouve = false;
+    var long = 0;
+    if(null !== navTiming && typeof navTiming !== 'undefined') {
+      clearTimeout(navTiming);
+    }
+    var theElem = document.getElementById(element);
+  	theElem.style.height = theElem.clientHeight+"px";
+  	//alert("Slideup Style height: " + theElem.style.height);
+  	theElem.style.transition = "height 2s ease";
+    if(null !== navBeforeHeight.length && typeof navBeforeHeight.length !== 'undefined') {
+      long = navBeforeHeight.length;
+    }
+    if(long <= 0) {
+      navBeforeHeight[0] = [2];
+      navBeforeHeight[0][0] = element;
+      navBeforeHeight[0][1] = theElem.clientHeight;
+      theElem.style.height = "0px";
+    }
+    else {
+      i = 0;
+      while(i < long) {
+        if(navBeforeHeight[i][0] == element) {
+        	trouve = true;
+        }
+        i += 1;
+      }
+    }
+    if(trouve) {
+      theElem.style.height = "0px";
+    }
+  }
+  
+  function toggle(element) {
+    var elemH;
+    elemH = document.getElementById(element).clientHeight;
+    if(elemH == 0) {
+      slideDown(element);
+    }
+    else {
+      slideUp(element);
+    }
+  }
+  
+  function addOtherFTRS() {
+    f1 = function() { 
+      toggle('navigation'); 
+    };
+    f2 = function() { 
+      slideUp('navigation'); 
+    };
+    b1 = document.getElementById('b-home');
+    if(!window.addEventListener || window.attachEvent) {
+      b1.attachEvent('click', f1);
+    }
+    else {
+      b1.addEventListener('click', f1);
+    }
+    navTiming = setTimeout(f2, 10000);
+  }
+  
+  function launch() {
+    f3 = addOtherFTRS;
+    if(document.readyState == "complete") {
+      clearInterval(myIntrvl);
+      f3();
+    }
+  }
+  
+  diNaMowM4 = function() {
+    allerA("menu4");
+  }
+  
+  diNaMowTop = function() {
+    allerA("bwc2R");
+  }
+  
+  myIntrvl = setInterval(launch, 250);
+  window.onpageshow = function() {
+    setTimeout(diNaMowM4, 2000);
+  }
+  if(!window.addEventListener || window.attachEvent) {
+    scrollTop.attachEvent('click', diNaMowTop);
+  }
+  else {
+    scrollTop.addEventListener('click', diNaMowTop);
+  }
+</script>
+</body>
+</html>
