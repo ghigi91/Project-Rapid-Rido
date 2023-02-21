@@ -216,7 +216,7 @@ img {
   width: 40px;
   bottom: 5%;
   right: 3%;
-  background: url('./defilement-haut-de-page-demo-img/to-top.png') no-repeat bottom;
+  background: url('https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/defilement-haut-de-page-demo-img/to-top.png') no-repeat bottom;
 }
 	
 .scrollToTopBox .scrollToTopBtn {
@@ -232,5 +232,5 @@ a.scrollLink {
 }
   	
 .scrollToTopBox:hover {
-	background: url('./defilement-haut-de-page-demo-img/to-top-hover.png') no-repeat bottom;
+	background: url('https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/defilement-haut-de-page-demo-img/to-top-hover.png') no-repeat bottom;
 }
