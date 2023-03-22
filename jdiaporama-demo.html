@@ -15,8 +15,7 @@
   			<li class="unDiapo"><div class="diapElem">
   			  <picture>
   			    <source media="(min-aspect-ratio: 5/4) and (orientation: landscape)" srcset="./diaporama-demo-img/slide1.png" />
-  			    <img width="100%" height="auto" src="./diaporama-demo-img/slideA.png" alt="UN DIAPORAMA HTML/CSS/JS FACILE D&apos;UTILISATION" title="D&eacute;filement avec les boutons de contr&ocirc;le &apos;pr&eacute;c&eacute;dent&apos; et &apos;suivant&apos;"
-" />
+  			    <img width="100%" height="auto" src="./diaporama-demo-img/slideA.png" alt="UN DIAPORAMA HTML-CSS-JS FACILE D&apos;UTILISATION" title="D&eacute;filement avec les boutons de contr&ocirc;le &apos;pr&eacute;c&eacute;dent&apos; et &apos;suivant&apos;" />
   			  </picture>
           <div class="diapoboutonline">
   				  <a href="#cadre-offres-vad" onclick="allerA('cadre-offres-vad')"><span class="boutonW"><span class="txtGrasfff">En savoir plus...</span></span></a>
@@ -46,7 +45,7 @@
   				  <a href="#contact" onclick="allerA('contact')"><span class="boutonW">Nous rejoindre</span></a>
   				  <a href="#actualites" onclick="allerA('actualites')"><span class="boutonR04">Consulter nos appels &agrave; projets</span></a>
   			  </div>  
-  			  <div class="catchphrase"><span class="txtGrosGrasfff">Vos diapositives sont automatiquement s&eacute;lectionn&eacute;es au format privil&eacute;gi&eacute; de votre navigateur en fonction des r&eacute;solutions et densit&eacute; de pixels rencontr&eacute;s. Le format 16/9 ou 5/4 changent automatiquement si l&apos;&eacute;cran passe du format paysage au format portrait.</span>
+  			  <div class="catchphrase"><span class="txtGrosGrasfff">Vos diapositives sont automatiquement s&eacute;lectionn&eacute;es au format privil&eacute;gi&eacute; de votre navigateur en fonction des r&eacute;solutions et densit&eacute; de pixels rencontr&eacute;s.</span>
   			  </div>   
         </div></li>
   		</ul>
@@ -86,6 +85,18 @@
     	var myAnchor = "undefined";
     	var f6 = launch;
       myIntrvl = setInterval(f6, 1000);
+    }
+    
+    window.onresize = function() {
+      if(true == mydiaporama.diapoExists()) {
+        mydiaporama.diapoResize();
+        //document.getElementById("diaporama1").focus();
+      }
+      
+      window.onorientationchange = function() {
+        alert("bla");
+      }
+      
     }
   </script>
 </body>
