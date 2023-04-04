@@ -217,7 +217,7 @@ img {
   display: inline-block;
   width: 37px;
   height: 36px;
-  background: url('./diaporama-demo-img/estrella.png') no-repeat left;
+  background: url('./img-diaporama-demo/estrella.png') no-repeat left;
 }
 
 .controlContainer {
