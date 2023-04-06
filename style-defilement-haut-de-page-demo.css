@@ -1,0 +1,234 @@
+@charset "ISO-8859-15";
+  	
+body {
+  max-width: 100vw;
+	font-family: 'Sawasdee', sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  vertical-align: middle;
+}
+
+.txtGrosGrasfff {
+  font-size: 2.25vw;
+  font-weight: bold;
+  color: #fff;
+  text-align: justify;
+}
+
+.txtNormalfff {
+  font-size: 1.75vw;
+  font-weight: normal;
+  color: #fff;
+  text-align: justify;
+}	
+	
+.txtGrasfff {
+  font-size: 1.75vw;
+  font-weight: bold;
+  color: #fff;
+  text-align: justify;
+}
+	
+.txtGrosGras666 {
+  font-size: 2.25vw;
+  font-weight: bold;
+  color: #666;
+  text-align: justify;
+}
+
+.txtNormal666 {
+  font-size: 1.75vw;
+  font-weight: normal;
+  color: #666;
+  text-align: justify;
+}	
+	
+.txtGras666 {
+  font-size: 1.75vw;
+  font-weight: bold;
+  color: #666;
+  text-align: justify;
+}
+
+.pageContainer {
+  width: 100vw;
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+/* Menu naviguer --------------*/
+.nav1 {	
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.nav-before {
+  display: block;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+}
+
+.header-layout {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3%;
+  text-align: center;
+}
+
+.header-menu {
+  list-style: none outside none;
+  text-indent: 0;
+}
+		
+#logo {
+  display: inline-block;
+  width: 40%;
+  min-width: 120px;
+	max-width: 300px;
+}	
+
+#b-home {
+	display: inline-block;
+  width: 40%;
+  min-width: 75px;
+	max-width: 300px;
+}	
+
+.nav2 {
+  margin: 0;
+	padding: 0;
+	max-width: 100vw;
+	overflow: hidden;
+}
+
+.nav-after {
+  margin: 0;
+  background-image: linear-gradient(180deg, #00CCFF 5%,  #03004D 100%);
+  width: 100vw;
+  transition: height ease 2s;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
+.list-menu {
+  width: 94%;
+  margin: 0 auto;
+  list-style: none outside none;
+  border-bottom: solid 1px #fff;
+}
+
+.list-m-itm {
+  margin: 3%;
+  padding: 3%;
+  text-align: left;
+}
+
+.list-menu:last-child {
+  border-bottom: solid 1px transparent;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.75vw;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #ff6600;
+}
+
+a:focus {
+	color: #ff6600;
+}
+		
+a:active {
+	color: #ff6600;
+} 
+
+img {
+	vertical-align: middle;
+}
+		
+#actif {
+	color: #00CCFF;
+}
+	/* Banniere ---------------------------------------------------------------------*/
+.banniere {
+	width: 100vw;
+	max-width: 100vw;
+	padding: 0;
+	margin: 0;
+}
+
+#banniere-accroche {
+	padding: 3vw;
+	text-align: center;
+	background-color: #00CCFF;
+}
+
+#banniere-coordonnees {
+	padding: 3vw;
+	text-align: center;
+	color:#ff6600;
+	background-color: #CCC;
+}
+		
+#middle-deco {			
+	background-image: linear-gradient(45deg, #00ccff 0%, #00ccff 50%, #ccc 50%, #ccc 100%);
+	height: 0px;
+}
+
+.nav-coord {
+  display: block; 
+	margin: 0;
+	padding: 0; 
+	list-style: none outside none;
+}
+
+.listCoord {
+	display: inline;
+	margin: 1vw;
+}
+
+/*---------------Banniere -----------------*/
+
+.scrollToTopBox {
+  position: fixed;
+  width: 40px;
+  bottom: 5%;
+  right: 3%;
+}
+
+.scrollToTopBtn {
+  background: url('https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/defilement-haut-de-page-demo-img/to-top.png') no-repeat bottom;
+  text-align: center;
+  cursor: pointer;
+  height: 50px;
+}
+
+.scrollToTopBtn:hover {
+	background: url('https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/defilement-haut-de-page-demo-img/to-top-hover.png') no-repeat bottom;
+}
+  	
+a.scrollLink {
+  text-decoration: none;
+  color: #666;
+  font-size: 1vw;
+}
