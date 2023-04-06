@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15" />
 	<title>Demo Js d&apos;un defilement haut de page d&apos;une page web en html-css-js</title>
-	<link rel="stylesheet" href="./defilement-haut-de-page-demo.css" />
+	<link rel="stylesheet" href="style-defilement-haut-de-page-demo.css" />
 </head>
 <body>
 <!--------------------------------Navigation--------------------------------------->
@@ -22,10 +22,10 @@
     <div class="nav-after" id="navigation">
     	<ul id="menu">
     		<li class="list-menu"><a href="#" title="Premi&egrave;re Rubrique" id="actif" target="_self"><div class="list-m-itm"><span><img id="icoHome" src="https://raw.githubusercontent.com/ghigi91/Project-Rapid-Rido/defilement-haut-de-page-demo-img/home.png" alt="MENU" /></span></div></a></li>
-    		<li class="list-menu"><a href="#menu1" title="Deuxi&egrave;me Rubrique" id="nav-solutions" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 1 - Basic Static HTML</span></div></a></li>
-    		<li class="list-menu"><a href="#menu2" title="Troisi&egrave;me Rubrique" id="nav-offres" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 2 - Premium Dynamic HTML</span></div></a></li>
-    		<li class="list-menu"><a href="#menu3" title="Troisi&egrave;me Rubrique" id="nav-actualites" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 3 - Advanced R.Design</span></div></a></li>
-    		<li class="list-menu"><a href="#menu4" title="Quatri&egrave;me Rubrique" id="nav-contact" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 4 - User Experience</span></div></a></li>
+    		<li class="list-menu"><a href="#menu1" title="Deuxi&egrave;me Rubrique" id="basic" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 1 - Basic Static HTML</span></div></a></li>
+    		<li class="list-menu"><a href="#menu2" title="Troisi&egrave;me Rubrique" id="premium" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 2 - Premium Dynamic HTML</span></div></a></li>
+    		<li class="list-menu"><a href="#menu3" title="Troisi&egrave;me Rubrique" id="rDesign" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 3 - Advanced R.Design</span></div></a></li>
+    		<li class="list-menu"><a href="#menu4" title="Quatri&egrave;me Rubrique" id="userEx" target="_self"><div class="list-m-itm"><span class="txtGrasfff">ITEM 4 - User Experience</span></div></a></li>
     	</ul>
     </div>
   </div>
@@ -46,9 +46,9 @@
   </div>
   <div id="menu2" style="background: #ff6600; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Rapid Rido</span>
   </div>
-  <div id="menu3" style="background: #00ccff; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Advanced CoreDuo</span>
+  <div id="menu3" style="background: #00ccff; min-height: 400px; text-align: center; padding: 3%;"><span style="color: #fff;">Advanced CoreDuo</span>
   </div>
-  <div id="menu4" style="background: #ccc; min-height: 400px; text-align: center; padding: 3%;"><span style="color:#fff;">Belome web Creative</span>
+  <div id="menu4" style="background: #ccc; min-height: 400px; text-align: center; padding: 3%;"><span style="color: #fff;">Belome Web Creative</span>
   </div>
   <!------------Bas de page----------------->
   <div id="scrollButton" class="scrollToTopBox">
@@ -64,6 +64,10 @@
   navTiming = undefined;
   navBeforeHeight = [];
   scrollTop = document.getElementById("scrollButton");
+  m1 = document.getElementById('basic');
+  m2 = document.getElementById('premium');
+  m3 = document.getElementById('rDesign');
+  m4 = document.getElementById('userEx');
   
   function getEaseOutExpo(distance, duree, longeur) {
 		var tempo;
@@ -104,17 +108,82 @@
   	return interpolation;	
   }
   
-  function allerA(element){
+  function allerA(element) {
 		var animFrames;
     var cpt = 0;
     var posY = 0;
     var tabV = [];  
     var myElement = document.getElementById(element);
-    if(myElement !== null && myElement != "") {
+    if(null !== myElement && typeof myElement !== 'undefined') {
 	    posY = myElement.offsetTop - window.pageYOffset;
       tabV = getEaseOutExpo(posY, 1000, 50);
       animFrames = setInterval(function() {
         window.scrollBy(0, tabV[cpt]);
+        cpt+=1; 
+        if(cpt >= tabV.length) {
+          clearInterval(animFrames);
+        }
+      },20);
+    }	
+	}
+	
+	function getTrgt(initCible) {
+	  var defElm = initCible;
+	  var cnd = 0;
+	  if(defElem.tagName.match("<li>")) {
+      cnd = 0;
+      console.log(cnd);
+    }
+    if(initCible.tagName.match("<a>")) {
+      cnd = 1;
+      console.log(cnd);
+    }
+    if(initCible.tagName.match("<div>")) {
+      cnd = 2;
+      console.log(cnd);
+    }
+    if(initCible.tagName.match("<span>")) {
+      cnd = 3;
+      console.log(cnd);
+    }
+    switch(cnd) {
+      case 0:
+        defElm = initCible;
+        break;
+      case 1:
+        defElm = initCible.parentNode;
+        break;
+      case 2:
+        defElm = initCible.parentNode.parentNode;
+        break;
+      case 3:
+        defElm = initCible.parentNode.parentNode.parentNode;
+        break;
+      default:
+        defElm = initCible;
+        break;
+    }
+    return defElm;
+	}
+	
+	function scrollDwn(element, cible) {
+		var animFrames;
+    var cpt = 0;
+    var posY = 0;
+    var tabV = [];  
+    var myElement = document.getElementById(element);
+    var trgt = getTrgt(cible);
+    f4 = getEaseOutExpo;
+    if(null !== myElement && typeof myElement !== 'undefined') {
+	    //posY = myElement.offsetTop - window.pageYOffset;
+	    posY = trgt.pageYOffset - myElement.offsetTop;
+	    console.log(trgt);
+      //tabV = getEaseOutExpo(posY, 1000, 50);
+      tabV = f4(posY, 1000, 50);
+      animFrames = setInterval(function() {
+        window.scrollBy(0, tabV[cpt]);
+        console.log("bla 4");
+        //console.log(tabV[cpt]);
         cpt+=1; 
         if(cpt >= tabV.length) {
           clearInterval(animFrames);
@@ -211,6 +280,43 @@
       clearInterval(myIntrvl);
       f3();
     }
+  }
+  
+  if(!window.addEventListener || window.attachEvent) {
+    m1.attachEvent('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu1', evt.target);
+    });
+    m2.attachEvent('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu2', evt.target);
+    });
+    m3.attachEvent('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu3', evt.target);
+    });
+    m4.attachEvent('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu4', evt.target);
+    });
+  }
+  else {
+    m1.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu1', evt.target);
+    });
+    m2.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu2', evt.target);
+    });
+    m3.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu3', evt.target);
+    });
+    m4.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      scrollDwn('menu4', evt.target);
+    });
   }
   
   diNaMowM4 = function() {
